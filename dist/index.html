@@ -1,1 +1,119 @@
-<!doctype html><html lang="tr"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta id="viewport" name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"/><script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script><title>Basic Maths Quiz</title><script defer="defer" src="main.min.js"></script><link href="main.min.css" rel="stylesheet"></head><body data-template="index"><section class="start"><div class="container"><div class="starter"><div class="row"><div class="col-12"><span class="starter-header">Maths Quiz</span></div><div class="col-12"><span class="starter-title">Get the most correct answers and improve your mathematics</span></div><div class="col-12"><span class="starter-content">Solve as many questions as you can in 1 minute and get your VW score. Be careful, every mistake reduces your score.</span></div><div class="col-12"><input class="starter-input" placeholder="Your Name" required></div><div class="col-12 d-flex justify-content-center"><button class="starter-submit" type="submit">Start Matching!</button></div><div class="col-12"><span class="starter-smallText">Get Lucky!</span></div></div></div></div></section><section class="play d-none"><div class="container"><div class="playergroup"><div class="row"><div class="col-12"><span class="playergroup-header">READY?</span></div><div class="col-12 d-flex justify-content-center"><button class="playergroup-startBtn">START</button></div></div></div></div></section><section class="match d-none"><div class="container"><div class="matchquiz"><div class="row"><div class="col-12"><span class="matchquiz-header">Answer The Questions</span></div><div class="col-12"><span class="matchquiz-time" id="timer">01:00</span></div><div class="questions"><div class="row"><div class="col-lg-5 col-12 d-flex align-item-center justify-content-center"><span id="question"></span></div><div class="col-lg-2 col-12 d-flex align-item-center justify-content-center"><span class="questions-to">=</span></div><div class="col-lg-5 col-12 d-flex align-item-center justify-content-center"><input type="number" class="questions-answers" placeholder="Answer" id="answer"></div></div></div><div class="col-12 mt-5"><span class="matchquiz-score me-2">Score :</span><span class="scores ms-2">0</span></div><div class="col-12"><span class="players">Player : </span><span class="players" id="kullanici"></span></div></div></div></div></section><section class="cong d-none"><div class="container"><div class="congration"><div class="row"><div class="col-12"><div class="congration-header">- Congratulations -</div></div><div class="col-12"><div id="cong-name" class="congration-header"></div></div><div class="col-12"><div class="congration-title">You made <span id="cong-score"></span> in 1 minute!</div></div><div class="col-12 d-flex justify-content-center"><button class="congration-startBtn">RESTART</button></div></div></div></div></section></body></html>
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta id="viewport" name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <title>Basic Maths Quiz</title>
+  <script defer src="main.min.js"></script><link href="main.min.css" rel="stylesheet"></head>
+  <body data-template="index">
+    <section class="start">
+      <div class="container">
+        <div class="starter">
+          <div class="row">
+            <div class="col-12">
+              <span class="starter-header">Maths Quiz</span>
+            </div>
+            <div class="col-12">
+              <span class="starter-title">Get the most correct answers and improve your mathematics</span>
+            </div>
+            <div class="col-12">
+              <span class="starter-content">Solve as many questions as you can in 1 minute and get your VW score. Be careful, every mistake reduces your score.</span>
+            </div>
+              <div class="col-12">
+                <input type="text" class="starter-input" placeholder="Your Name" required> 
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <button class="starter-submit" type="submit">Start Matching!</button>
+              </div>
+            <div class="col-12">
+              <span class="starter-smallText">Get Lucky!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="play d-none">
+      <div class="container">
+        <div class="playergroup">
+          <div class="row">
+            <div class="col-12">
+              <span class="playergroup-header">
+                READY?
+              </span>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+              <button class="playergroup-startBtn">
+                START
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="match d-none">
+      <div class="container">
+        <div class="matchquiz">
+          <div class="row">
+            <div class="col-12">
+              <span class="matchquiz-header">Answer The Questions</span>
+            </div>
+            <div class="col-12">
+              <span class="matchquiz-time" id="timer">01:00</span>
+            </div>
+            <div class="questions">
+              <div class="row">
+              <div class="col-lg-5 col-12 d-flex align-item-center justify-content-center">
+                <span id="question"></span>
+              </div>
+              <div class="col-lg-2 col-12 d-flex align-item-center justify-content-center">
+                <span class="questions-to">=</span>
+              </div>
+              <div class="col-lg-5 col-12 d-flex align-item-center justify-content-center">
+                <input type="number" class="questions-answers" placeholder="Answer"id="answer">
+              </div>
+              </div>
+            </div>
+            <div class="col-12 mt-5">
+              <span class="matchquiz-score me-2">Score :</span><span class="scores ms-2">0</span>
+            </div>
+            <div class="col-12">
+              <span class="players">Player : </span><span class="players" id="kullanici"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cong d-none">
+      <div class="container">
+        <div class="congration">
+          <div class="row">
+            <div class="col-12">
+              <div class="congration-header">
+               - Congratulations -
+              </div>
+            </div>
+            <div class="col-12">
+              <div id="cong-name"class="congration-header">
+
+               </div>
+            </div>
+            <div class="col-12">
+              <div class="congration-title">
+                You made <span id="cong-score"></span> in 1 minute!
+              </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+              <button class="congration-startBtn">
+                RESTART
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
