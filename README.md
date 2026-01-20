@@ -1,1 +1,1 @@
-Demo : https://sergenakkaya.com/maths/index.html
+Demo : [sergenakkaya.com.tr](https://www.sergenakkaya.com.tr/project/mathquiz/)
